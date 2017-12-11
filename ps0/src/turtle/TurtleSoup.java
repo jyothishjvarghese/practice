@@ -32,9 +32,8 @@ public class TurtleSoup {
      * @return angle in degrees, where 0 <= angle < 360
      */
     public static double calculateRegularPolygonAngle(int sides) {
-        double angle =0.0;
-        if(sides > 2)
-          {angle = ((sides-2)*180)/sides;}
+        
+        double angle = (double) Math.round((sides-2)*180)/sides;
         return angle;
     }
 
@@ -50,9 +49,9 @@ public class TurtleSoup {
      */
     public static int calculatePolygonSidesFromAngle(double angle) {
         int sides =0;
-        if(0 > angle && angle < 180){
+       
             double extAngle = (180.0 - angle);
-            sides = (int) (360.0/extAngle); }
+            sides = (int) Math.round(360.0/extAngle); 
         return sides;
     }
 
